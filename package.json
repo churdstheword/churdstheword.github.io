@@ -1,15 +1,12 @@
 {
-    "name": "churdstheword.github.io",
-    "version": "1.0.0",
-    "description": "A personal website project",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "churd",
-    "license": "ISC",
-    "devDependencies": {
-        "wrangler": "^3.109.2"
-    }
+  "name": "jekyll-test",
+  "version": "1.0.0",
+  "description": "Testing site for jekyll features.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

@@ -1,5 +1,47 @@
+# config.yml
+
+local_backend: true
+
 backend:
-  name: github
-  repo: churdstheword/sveltia-cms-auth
-  branch: main
-  base_url: https://sveltia-cms-auth.churdstheword.workers.dev
+  # branch: develop # optional, defaults to master
+  # name: git-gateway # local name
+  name: github #github # remote name
+  repo: churdstheword/churdstheword.github.io
+  
+  #auth_type: pkce # Required for pkce
+  #app_id: # Application ID from your GitLab settings
+publish_mode: simple #editorial_workflow # in local use simple
+media_folder: 'media'
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: '_posts'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'text', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Feature Image', name: 'feature_image', widget: 'image', required: false, hint: 'Featured image for the post list and post header.'}
+      - { label: 'Post Header', name: 'post_header', widget: 'image', required: false, hint: 'Image shown above the post title in the post list.'}
+      - { label: 'Categories', name: 'categories', widget: 'list', required: false }
+      - { label: 'Slugified Categories', name: 'slugified_categories', widget: 'list', required: false, hint: 'If category names have multiple words, include a slugified version here.' }
+      - { label: 'Tags', name: 'tags', widget: 'list', required: false }
+      - { label: 'Keywords', name: 'keywords', widget: 'list', label_singular: 'keyword', required: false }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "about"
+        label: "About Page"
+        editor:
+          preview: false
+        file: "about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Permalink", name: "permalink", widget: "string" }
+          - { label: "Layout", name: "layout", widget: "string"}
+          - { label: 'Body', name: 'body', widget: 'markdown' }
