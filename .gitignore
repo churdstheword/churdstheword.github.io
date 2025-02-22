@@ -1,0 +1,12 @@
+.DS_Store
+dist
+build
+coverage
+*.log
+*.tmp
+*.swp
+.idea/
+.vscode/
+*.iml
+*.env
+*node_modules/*
