@@ -7,7 +7,7 @@ backend:
   # name: git-gateway # local name
   name: github #github # remote name
   repo: churdstheword/churdstheword.github.io
-  
+  base_url: https://sveltia-cms-auth.churdstheword.workers.dev
   #auth_type: pkce # Required for pkce
   #app_id: # Application ID from your GitLab settings
 publish_mode: simple #editorial_workflow # in local use simple
